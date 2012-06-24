@@ -157,6 +157,12 @@ void Runner::print(const QString &fh, const QString &content) {
   }
 }
 
+void Runner::writeFile(const QString &path, const QString &content ) {
+  QTextStream ts(path);
+  ts << qPrintable(content);
+  ts.flush();
+}
+
 void Runner::finishSuite() {
   isFinished = true;
   runs = 0;

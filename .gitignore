@@ -17,3 +17,4 @@ jhw.*.html
 coverage/
 tmp/
 cache dir/
+.project
