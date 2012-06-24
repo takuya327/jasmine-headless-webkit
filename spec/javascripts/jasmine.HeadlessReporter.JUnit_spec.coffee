@@ -34,7 +34,7 @@ describe "jasmine.HeadlessReporter.JUnit", ->
 
   describe "constructor", ->
     it "should default path to spec/reports", ->
-      expect(reporter.savePath).toEqual("spec/reports")
+      expect(reporter.savePath).toEqual("spec/reports/")
 
     it "should default consolidate to true", ->
       expect(reporter.consolidate).toBe(true)

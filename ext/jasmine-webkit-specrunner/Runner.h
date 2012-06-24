@@ -40,6 +40,7 @@ class Runner: public QObject {
     QString getSeed();
 
     void print(const QString &fh, const QString &content);
+    void writeFile(const QString &path, const QString &content);
     void finishSuite();
     void ping();
 

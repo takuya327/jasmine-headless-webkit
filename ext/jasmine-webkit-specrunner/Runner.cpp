@@ -158,9 +158,12 @@ void Runner::print(const QString &fh, const QString &content) {
 }
 
 void Runner::writeFile(const QString &path, const QString &content ) {
-  QTextStream ts(path);
+  QFile *outputFile = new QFile(path);
+  outputFile->open(QIODevice::WriteOnly);
+  QTextStream ts(outputFile);
   ts << qPrintable(content);
   ts.flush();
+  outputFile->close();
 }
 
 void Runner::finishSuite() {

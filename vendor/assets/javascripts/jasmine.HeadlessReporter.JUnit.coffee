@@ -37,7 +37,7 @@ class jasmine.HeadlessReporter.JUnit extends jasmine.HeadlessReporter
     # useDotNotation whether to separate suite names with
     #                  dots rather than spaces (ie "Class.init" not
     #                  "Class init"); default: true
-    @savePath = "spec/reports"
+    @savePath = "spec/reports/"
     @consolidate = true
     @useDotNotation = true
     
