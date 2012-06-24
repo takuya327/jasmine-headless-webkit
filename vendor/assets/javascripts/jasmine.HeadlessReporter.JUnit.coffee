@@ -1,5 +1,7 @@
 #= require jasmine.HeadlessReporter
 
+# This source code is based on the https://github.com/larrymyers/jasmine-reporters/blob/master/src/jasmine.junit_reporter.js 
+
 elapsed = (startTime, endTime)->
   (endTime - startTime)/1000
 
@@ -129,7 +131,8 @@ class jasmine.HeadlessReporter.JUnit extends jasmine.HeadlessReporter
     output.join('')
 
   writeFile: (filename, text)->
-    JHW.writeFile(filename, text)
+    if window.JHW
+      JHW.writeFile(filename, text)
   
   getFullName: (suite, isFilename)->
       if @useDotNotation
@@ -139,7 +142,6 @@ class jasmine.HeadlessReporter.JUnit extends jasmine.HeadlessReporter
         while parentSuite
           fullName = parentSuite.description + '.' + fullName
           parentSuite = parentSuite.parentSuite
-          for (var ; parentSuite; ) {
       else
         fullName = suite.getFullName()
 
