@@ -14,7 +14,7 @@ class jasmine.HeadlessReporter.Verbose extends jasmine.HeadlessReporter.ConsoleB
     @lastNames = spec.getSpecSplitName()
 
     for line in this.indentSpec(@lastNames, currentLastNames, color)
-      if line? and !_.isEmpty(line)
+      if line? and line
         this.puts(line)
 
   indentSpec: (current, last, color) =>
